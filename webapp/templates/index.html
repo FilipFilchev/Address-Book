@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Address Book</title>
+    <h1>Sign In The Address Book</h1>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anta&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <form id="data-form" enctype="multipart/form-data">
+        <textarea name="textinput" placeholder="Enter your name and address..."></textarea>
+        <input type="file" name="csvfile" id="csvfile">
+        <button type="button" id="submit" onclick="processData()">Submit</button>
+        <button type="button" id="download" onclick="downloadData()">Download</button>
+        <button type="button" id="reset" onclick="window.location.href='/reset'">Reset Data</button>
+
+    </form>
+    <div id="results"></div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

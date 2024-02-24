@@ -1,0 +1,30 @@
+python3 -m venv env -> to create separate env for all dependencies
+source env/bin/activate -> to activate it
+pip install flask pandas requests unidecode
+
+To create a Flask address book webapp with Post and Get requests for data handling and HTML template with css style for UI
+- Logic will be handled by the Flask app as such:
+ - User inputs data in a form or uploads it as CSV file
+ - Data is processed by the server transcrabing localy or translating via API and checking for matching addresses.
+ - Than the users with matching location are displayed on the UI (home page) as a text document where each line is 
+   a comma-separated list of NAMES of people
+   living at the same address. The names on each line should be sorted alphabetically.
+   The lines of the file should also be sorted alphabetically. 
+   The output should be visualised on the UI and also could be downloaded as a txt file
+
+
+SO far:
+- No Database: Since there's no database implemented, the processed data won't persist between server restarts.
+  For a production system, we would want to implement a more permanent storage solution.
+
+- Google Cloud Translation API: Use this to translate non-English addresses into English before processing. 
+  Google's API is capable of detecting and translating languages automatically, which can help standardize addresses.
+
+- Free Translation API: Similar to Google's service, free APIs like LibreTranslate can offer translation capabilities without cost.
+
+- Latin Encoding/Transcription:We can develop a custom function to manually map common address components across languages 
+  (e.g., "Street" = "Straße" = "ул." = "ul."). This method involves creating 
+  a dictionary of terms and their equivalents in different languages or formats and then replacing those terms the address strings to normalize them.
+
+
+  pip freeze > requirements.txt
