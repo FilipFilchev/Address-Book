@@ -2,6 +2,8 @@
 
 Deployed here: https://address-book-webapp-fdb2ba8061bc.herokuapp.com/
 
+![demo](demo.png)
+
 ## Overview
 
 This project is a web-based application designed to normalize and sort by name address data input by users. 
