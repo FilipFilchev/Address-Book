@@ -155,9 +155,10 @@ def download_txt():
     if not processed_data_storage.empty:
         buffer = io.StringIO()
         
-        # Write the grouped and sorted names to the buffer
-        for _, group in processed_data_storage.groupby('Address'):
-            buffer.write(', '.join(sorted(group['Name'])) + '\n')
+         # directly write its contents to the buffer.
+        for _, group in processed_data_storage.iterrows():
+            buffer.write(group['Name'] + '\n')
+        
         
         buffer.seek(0)
         response= make_response(buffer.getvalue())
